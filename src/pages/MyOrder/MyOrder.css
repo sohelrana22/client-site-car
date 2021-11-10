@@ -1,0 +1,10 @@
+.doctor{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+.order{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 10px;
+}
