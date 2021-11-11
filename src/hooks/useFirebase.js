@@ -23,6 +23,7 @@ const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [isLoading, setIsLoading] = useState(true);
+const [admin, setAdmin] = useState(false);
 
 const history = useHistory();
 
@@ -37,6 +38,12 @@ const history = useHistory();
         
     }
 
+    // admin data load
+    useEffect(()=> {
+        fetch(`https://peaceful-earth-75110.herokuapp.com/users/${user.email}`)
+        .then(res => res.json())
+        .then(data => setAdmin(data.admin))
+    }, [user.email])
 
     
     // Get the currently signed-in user
@@ -68,6 +75,8 @@ const history = useHistory();
         createUserWithEmailAndPassword(auth, email, password)
         .then(result => {
             setName()
+            // save user to database
+            saveUser(email, name, 'POST');
             alert('user has been created')
         })
         .catch(error =>{
@@ -98,10 +107,22 @@ function setUserName(){
         displayName: name
       })
 }
+
+const saveUser = (email, displayName, method) => {
+    const user = {email, displayName};
+    fetch('https://peaceful-earth-75110.herokuapp.com/users', {
+        method: 'POST',
+        headers:{
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+}
     return {
         signInWithGoogle,
         signUpWithEmail,
         logOut,
+        admin,
         isLoading,
         getPassword,
         getEmail,

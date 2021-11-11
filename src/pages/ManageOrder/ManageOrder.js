@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import useFirebase from '../../hooks/useFirebase';
+import sectionBg from './../../assets/images/bg.jpg';
 
 const ManageOrder = () => {
     const { user } = useFirebase()
@@ -8,14 +9,14 @@ const ManageOrder = () => {
     const [allOrder, setAllOrder] = useState([])
     console.log(id);
     useEffect(() => {
-        fetch('http://localhost:5000/manageorder/')
+        fetch('https://peaceful-earth-75110.herokuapp.com/manageorder/')
             .then(res => res.json())
             .then(data => setAllOrder(data));
     }, [id])
     const handleDelete = email => {
         const proceed = window.confirm('Are you sure, You want to cancel Order?');
         if(proceed) {
-          const url = `http://localhost:5000/manageorder/${email}`;
+          const url = `https://peaceful-earth-75110.herokuapp.com/manageorder/${email}`;
           fetch(url, {
               method: 'DELETE'
           })
@@ -32,10 +33,13 @@ const ManageOrder = () => {
         }
       }
     return (
-        <div className="admin-section p-5">
+        <div
+        style={{ background: `url(${sectionBg})`, backgroundAttachment: "fixed" }} className="py-5"
+        >
+          <div className="admin-section p-5">
           <div className='text-center fw-bold'>
-            <h1 className='pt-3'>ADMIN DASHBOARD</h1>
-             <h4 className='pt-2 pb-2'>TOTAL ORDERS:  { allOrder.length}</h4>
+            <h1 className='pt-3 text-white'>ADMIN DASHBOARD</h1>
+             <h4 className='pt-2 pb-2 text-white'>TOTAL ORDERS:  { allOrder.length}</h4>
           </div>
           <div className='container'>
              <Table striped bordered hover
@@ -43,26 +47,28 @@ const ManageOrder = () => {
         <thead>
           <tr>
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}>Name</th>
+                                    <th key={index} className="text-white">
+                                      Name</th>
                         ))}
                 
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}> ORDER ID </th>
+                                    <th key={index} className="text-white"> ORDER ID </th>
                         ))}
                 
     
                         {Array.from({ length: 1 }).map((_, index) => (
-                          <th key={index}>PRICE</th>
+                          <th key={index}className="text-white">PRICE</th>
                         ))}
                 
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}>STATUS</th>
+                                    <th key={index}className="text-white">STATUS</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}>CONFIRM</th>
+                                    <th key={index}className="text-white">CONFIRM</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}>CANCEL</th>
+                                    <th key={index}className="text-white">
+                                      CANCEL</th>
                         ))}
               </tr>
               
@@ -73,22 +79,22 @@ const ManageOrder = () => {
         <tr>
           
           {Array.from({ length: 1 }).map((_, index) => (
-            <td className='fw-bold ' key={index}>{ allOrder?.name}</td>
+            <td className='fw-bold ' key={index}className="text-white">{ allOrder?.name}</td>
           ))}
                   
           {Array.from({ length: 1 }).map((_, index) => (
-            <td className='fw-bold ' key={index}>{ allOrder?._id}</td>
+            <td className='fw-bold ' key={index}className="text-white">{ allOrder?._id}</td>
           ))}
                   
           {Array.from({ length: 1 }).map((_, index) => (
-            <td className='fw-bold ' key={index}>{ allOrder?.price}</td>
+            <td className='fw-bold ' key={index}className="text-white">{ allOrder?.price}</td>
           ))}
                   
           {Array.from({ length: 1 }).map((_, index) => (
-            <td className='fw-bold ' key={index}>Panding{ allOrder?.status}</td>
+            <td className='fw-bold ' key={index}className="text-white">Panding{ allOrder?.status}</td>
           ))}
           {Array.from({ length: 1 }).map((_, index) => (
-            <td className='fw-bold ' key={index}>Approve{ allOrder?.status}</td>
+            <td className='fw-bold ' key={index}className="text-white">Approve{ allOrder?.status}</td>
           ))}
           {Array.from({ length: 1 }).map((_, index) => (
             <td  key={index}><button className="px-3 bg-danger" onClick={() => handleDelete(allOrder.email)}>Delete</button></td>
@@ -107,6 +113,7 @@ const ManageOrder = () => {
         </Table>
        </div>
     
+        </div>
         </div>
       );
     };
