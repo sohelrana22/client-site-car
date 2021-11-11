@@ -9,6 +9,7 @@ import {
         updateProfile
      } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import initializeAuthentication from './../Firebase/firebase.init';
 
 initializeAuthentication()
@@ -22,6 +23,8 @@ const [name, setName] = useState("")
 const [email, setEmail] = useState("")
 const [password, setPassword] = useState("")
 const [isLoading, setIsLoading] = useState(true);
+
+const history = useHistory();
 
     // google sign in
     function signInWithGoogle() {

@@ -13,7 +13,7 @@ const Details = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
       delete data._id;
-        fetch('data.json/order', {
+        fetch('http://localhost:5000/order', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -30,7 +30,7 @@ const Details = () => {
     };
 
     useEffect(() => {
-        fetch('data.json/caritem')
+        fetch('http://localhost:5000/caritem')
             .then(res => res.json())
             .then(data => {
                 const orders = data?.find(order => order?._id === id)
@@ -67,7 +67,7 @@ const Details = () => {
 
 
                 {/* } */}
-                <div className="add-service col">
+                <div className="add-service col w-100">
                     <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
 
                         <input defaultValue={user.displayName} {...register("name")} />

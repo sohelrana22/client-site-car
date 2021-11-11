@@ -8,14 +8,14 @@ const ManageOrder = () => {
     const [allOrder, setAllOrder] = useState([])
     console.log(id);
     useEffect(() => {
-        fetch('data.json/manageorder/')
+        fetch('http://localhost:5000/manageorder/')
             .then(res => res.json())
             .then(data => setAllOrder(data));
     }, [id])
     const handleDelete = email => {
         const proceed = window.confirm('Are you sure, You want to cancel Order?');
         if(proceed) {
-          const url = `data.json/manageorder/${email}`;
+          const url = `http://localhost:5000/manageorder/${email}`;
           fetch(url, {
               method: 'DELETE'
           })
@@ -59,10 +59,10 @@ const ManageOrder = () => {
                                     <th key={index}>STATUS</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}>CANCEL</th>
+                                    <th key={index}>CONFIRM</th>
                         ))}
                         {Array.from({ length: 1 }).map((_, index) => (
-                                    <th key={index}>CONFIRM</th>
+                                    <th key={index}>CANCEL</th>
                         ))}
               </tr>
               
@@ -85,10 +85,13 @@ const ManageOrder = () => {
           ))}
                   
           {Array.from({ length: 1 }).map((_, index) => (
-            <td className='fw-bold ' key={index}>{ allOrder?.status}</td>
+            <td className='fw-bold ' key={index}>Panding{ allOrder?.status}</td>
           ))}
           {Array.from({ length: 1 }).map((_, index) => (
-            <td  key={index}>Panding<button className="px-3 bg-danger" onClick={() => handleDelete(allOrder.email)}>Delete</button></td>
+            <td className='fw-bold ' key={index}>Approve{ allOrder?.status}</td>
+          ))}
+          {Array.from({ length: 1 }).map((_, index) => (
+            <td  key={index}><button className="px-3 bg-danger" onClick={() => handleDelete(allOrder.email)}>Delete</button></td>
           ))}
           {Array.from({ length: 1 }).map((_, index) => (
             <td  key={index}></td>

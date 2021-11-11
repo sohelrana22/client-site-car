@@ -13,7 +13,15 @@ import Details from './pages/Details/Details';
 import PrivateRoute from './route/PrivateRoute';
 import CarItem from './pages/CarItem/CarItem';
 import MyOrder from './pages/MyOrder/MyOrder';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Pay from './pages/Pay/Pay';
+import Review from './pages/Review/Review';
 import ManageOrder from './pages/ManageOrder/ManageOrder';
+import AddProduct from './pages/AddProduct/AddProduct';
+import Admin from './pages/Admin/Admin';
+import ManageProduct from './pages/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -34,14 +42,38 @@ function App() {
           <Route path='/contact'>
             <Contact></Contact>
           </Route>
-          <Route path='/myorder'>
+          <PrivateRoute path='/myorder'>
             <MyOrder></MyOrder>
+          </PrivateRoute>
+          <PrivateRoute path='/addproduct'>
+            <AddProduct></AddProduct>
+          </PrivateRoute>
+          <PrivateRoute path='/manageproduct'>
+            <ManageProduct></ManageProduct>
+          </PrivateRoute>
+          <PrivateRoute path='/admin'>
+            <Admin></Admin>
+          </PrivateRoute>
+          <Route path='/login'>
+            <Login></Login>
           </Route>
+          <Route path='/register'>
+           <Register></Register>
+          </Route>
+          <PrivateRoute path='/manageallorder'>
+           <ManageOrder></ManageOrder>
+          </PrivateRoute>
          <Route exact path='/caritem'>
             <CarItem></CarItem>
           </Route>
-          <PrivateRoute exact path='/manageorder'>
-            <ManageOrder></ManageOrder>
+         <PrivateRoute path="/pay">
+            <Pay></Pay>
+          </PrivateRoute>
+         <PrivateRoute path="/review">
+            <Review></Review>
+          </PrivateRoute>
+          <PrivateRoute exact path='/dashboard'>
+            <Dashboard></Dashboard>
           </PrivateRoute>
           <PrivateRoute path='/order/:id'>
             <Details></Details>

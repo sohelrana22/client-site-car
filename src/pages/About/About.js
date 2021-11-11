@@ -10,7 +10,7 @@ const About = () => {
            <Container>
         <Zoom>
           <h2 className="text-center text-white mb-4">
-            WELCOME TO AL-KARIM TRAVEL AGENCY
+            WELCOME TO CAR HOUSE PLATFORM
           </h2>
         </Zoom>
         <Row>
@@ -18,7 +18,7 @@ const About = () => {
             <Bounce bottom>
               <h5 className="text-white">About Us</h5>
               <p className="text-muted">
-              Al-karim Travel Agency is One of the best Agency in Bangladesh. We are a 75 bedded multi-disciplinary tertiary- care Agency, situated at Mirpur Dhaka. It is establish to provide travel service for lower middle class people of all over the country based on Islami Shariah under the guidance of Pir Shaheb Chormonai.
+              Car House is One of the best Platform in Bangladesh. We are a 75 bedded multi-disciplinary tertiary- care, situated at Mirpur Dhaka. It is establish to provide car service for lower middle class people of all over the country based on Islami Shariah under the guidance of Md.Sohel Rana.
               </p>
               <p className="text-muted">
               It is observed that no visa procedure is absolutely hazard free. but can be alleviated to a great extant. Thus considering  the reality we meticulously follow service safety protocols. Our skilled and devoted workforce along with state of the art equipment has constructed a infrastructure to cater the client needs of Our services.
@@ -29,11 +29,11 @@ const About = () => {
             <Bounce bottom>
               <h5 className="text-white">What are the difference?</h5>
               <p className="text-muted">
-              Al-karim Travel Agency is One of the best Agency in Bangladesh. We are a 75 bedded multi-disciplinary tertiary- care Agency, situated at Mirpur Dhaka. It is establish to provide travel service for lower middle class people of all over the country based on Islami Shariah under the guidance of Pir Shaheb Chormonai.
+              Car House is One of the best Platform in Bangladesh. We are a 75 bedded multi-disciplinary tertiary- care, situated at Mirpur Dhaka. It is establish to provide car service for lower middle class people of all over the country based on Islami Shariah under the guidance of Md.Sohel Rana.
               </p>
-              <h5 className="text-white">Why choose Al-Karim Travel Agency?</h5>
+              <h5 className="text-white">Why choose Car House Platform?</h5>
               <p className="text-muted">
-              In Al-karim Travel Agency, we do believe in best service which comes as an extra facility not only from our Consultants but also from all staffs around. Together we try to create confidence inside our services minds and make them feel special, respected and cared.
+              In Car House, we do believe in best service which comes as an extra facility not only from our Consultants but also from all staffs around. Together we try to create confidence inside our services minds and make them feel special, respected and cared.
               </p>
             </Bounce>
           </Col>

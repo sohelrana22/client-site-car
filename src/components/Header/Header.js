@@ -29,7 +29,7 @@ const Header = () => {
         </>
         ) : (
          <>
-         <Nav.Link as={NavLink} className="text" to="/manageorder">Manage All Orders</Nav.Link>
+         <Nav.Link as={NavLink} className="text" to="/dashboard">Dashboard</Nav.Link>
              <span className="text align-items-center mt-2">{user.displayName}</span>
           <Nav.Link className="text ">
             <button onClick={logOut} className="btn btn-info p-1">Logout</button>

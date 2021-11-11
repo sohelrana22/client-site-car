@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Container, Form, Row, Button } from 'react-bootstrap';
 import sectionBg from './../../assets/images/bg.jpg';
-import map from './../../assets/images/Screenshot_2.png';
 import Bounce from 'react-reveal/Bounce';
 import Slide from 'react-reveal/Slide';
 
@@ -85,11 +84,7 @@ const Contact = () => {
             </Slide>
           </Container>
         </div>
-        <div className=" mb-4 w-80 h-100 ">
-           <img src={map}  alt="" />
-          
-           </div>
-      </div>
+     </div>
     );
 };
 

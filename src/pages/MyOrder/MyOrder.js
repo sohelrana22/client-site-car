@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import useFirebase from '../../hooks/useFirebase';
+import sectionBg from './../../assets/images/bg.jpg';
 import './MyOrder.css';
 
 const MyOrder = () => {
@@ -9,14 +10,14 @@ const MyOrder = () => {
     const [order, setOrder] = useState([])
     console.log(email);
     useEffect(() => {
-        fetch(`data.json/orders/${email}`)
+        fetch(`http://localhost:5000/orders/${email}`)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, [email])
     const handleDelete = email => {
       const proceed = window.confirm('Are you sure, You want to cancel Order?');
       if(proceed) {
-        const url = `data.json/orders/${email}`;
+        const url = `http://localhost:5000/orders/${email}`;
         fetch(url, {
             method: 'DELETE'
         })
@@ -33,11 +34,13 @@ const MyOrder = () => {
       }
     }
     return (
-        <div>
-            <h2 className="order">My Order:{order.length}</h2>
+        <div
+        style={{ background: `url(${sectionBg})`, backgroundAttachment: "fixed" }}
+        >
+            <h2 className="order pt-3">My Order:{order.length}</h2>
             <div>
                 {
-                    order.map(single => <div className="my-4" key={single._id}>
+                    order.map(single => <div className="pt-3" key={single._id}>
                         <Container className="bg-info">
                             <Row>
                                 <Col>
