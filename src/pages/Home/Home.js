@@ -17,6 +17,7 @@ import t2 from "./../../assets/images/t2.jpg"
 import t3 from "./../../assets/images/t3.jpg"
 import t4 from "./../../assets/images/t4.jpg"
 import './Home.css'
+import HomeReview from "../HomeReview/HomeReview";
 
 const Home = () => {
   const {caritem} = useAuth()
@@ -159,6 +160,7 @@ const Home = () => {
          </div>
          <Slide left>
             <h2 className="text-center text-white mb-2">Reviews</h2>
+            <HomeReview></HomeReview>
           </Slide>
         </Container>
       </div>

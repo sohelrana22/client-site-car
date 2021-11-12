@@ -40,10 +40,11 @@ const history = useHistory();
 
     // admin data load
     useEffect(()=> {
-        fetch(`https://peaceful-earth-75110.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
     }, [user.email])
+   
 
     
     // Get the currently signed-in user
@@ -110,7 +111,7 @@ function setUserName(){
 
 const saveUser = (email, displayName, method) => {
     const user = {email, displayName};
-    fetch('https://peaceful-earth-75110.herokuapp.com/users', {
+    fetch('http://localhost:5000/users', {
         method: 'POST',
         headers:{
             'content-type': 'application/json'

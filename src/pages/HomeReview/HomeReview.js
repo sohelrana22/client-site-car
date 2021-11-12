@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 
 
-const useReview = () => {
+const HomeReview = () => {
     const [review, setReview] = useState([]);
     useEffect(()=> {
-        fetch('https://peaceful-earth-75110.herokuapp.com/review')
+        fetch('http://localhost:5000/review')
         .then(res => res.json())
         .then((data) => setReview(data))
     },[]);
 
-    return {review, setReview};
+    return (
+        <div>
+            <h2>hello</h2>
+        </div>
+    )
 };
 
-export default useReview;
+export default HomeReview;

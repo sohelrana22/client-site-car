@@ -1,6 +1,7 @@
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
+import { Col, Row, Spinner } from 'react-bootstrap';
+import Dashboard from '../Dashboard/Dashboard';
 import sectionBg from './../../assets/images/bg.jpg';
 
 const Pay = () => {
@@ -8,7 +9,14 @@ const Pay = () => {
         <div
         style={{ background: `url(${sectionBg})`, backgroundAttachment: "fixed" }}
         >
-            <h1 className="text-center p-5 text-white mb-0">Payment System Coming Soon</h1>
+        <Row>
+          <Col className="md-3">
+          <Dashboard></Dashboard>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="md-9">
+          <h1 className="text-center p-5 text-white mb-0">Payment System Coming Soon</h1>
             <Button  variant="info" disabled>
     <Spinner
       as="span"
@@ -20,6 +28,8 @@ const Pay = () => {
     />
     Loading...
   </Button>
+          </Col>
+        </Row>
         </div>
     );
 };

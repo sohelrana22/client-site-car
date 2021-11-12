@@ -106,7 +106,7 @@ const Login = () => {
           }}
           className="btn"
         >
-          <img src={google} width="46px" alt="google-icon"  alt="google" />
+          <img src={google} width="46px" alt="google-icon" />
         </button>
         
       </div>

@@ -1,6 +1,7 @@
 import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
+import Dashboard from '../Dashboard/Dashboard';
 import sectionBg from './../../assets/images/bg.jpg';
 
 const Admin = () => {
@@ -12,7 +13,7 @@ const Admin = () => {
     }
     const handleAdminSubmit = e => {
         const user = {email};
-        fetch('https://peaceful-earth-75110.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -35,7 +36,14 @@ const Admin = () => {
         <div
         style={{ background: `url(${sectionBg})`, backgroundAttachment: "fixed" }} className="py-5"
         >
-            <h2 className="text-center mt-5 text-white">Make An Admin</h2>
+            <Row>
+                <Col className="md-3">
+                <Dashboard></Dashboard>
+                </Col>
+            </Row>
+            <Row>
+                <Col className="md-9">
+                <h2 className="text-center mt-5 text-white">Make An Admin</h2>
             <Form onSubmit={handleAdminSubmit} className="w-50 mx-auto p-5">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label className="text-white">Email address</Form.Label>
@@ -47,6 +55,8 @@ const Admin = () => {
                     Make Admin
                 </Button>
             </Form>
+                </Col>
+            </Row>
         </div>
     );
 };
