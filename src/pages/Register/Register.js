@@ -32,8 +32,9 @@ const Register = () => {
       <p className=" mt-3 text-white">Register with Email & Password</p>
       <p className="text-danger text-center">{error}</p>
    <div className="d-flex">
-   <div className="w-100">
-    <div className="w-100 mx-auto">
+   <div className="row">
+   <div className=" col-12 col-lg-6 mx-auto">
+    <div className="w-100 px-5">
         <Form
           onSubmit={signUp}
          
@@ -103,9 +104,10 @@ const Register = () => {
       </p>
       
     </div>
-    <div>
-    <img src={login} alt="" />
+    <div className="col-12 col-lg-6">
+    <img className="w-100" src={login} alt="" />
     </div>
+   </div>
    </div>
       
     </div>

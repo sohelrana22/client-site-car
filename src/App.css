@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.icon-color{
+  color: gold;
+}
+
+.home-service{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

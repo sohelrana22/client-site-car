@@ -1,7 +1,3 @@
 .text{
     color: rgb(4, 4, 255)!important;
 }
-.home-service{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}

@@ -1,6 +1,6 @@
 import React from 'react';
 import Zoom from 'react-reveal/Zoom';
-import { Card } from 'react-bootstrap';
+import { Card, Image } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import './Car.css'
 
@@ -8,8 +8,8 @@ const Car = ({ car }) => {
   const { img, name, detail, _id, price } = car;
   return (
     <Zoom>
-      <Card className="m-2 body-detail" style={{ width: '21rem' }}>
-        <Card.Img variant="top" className="img-fluid" src={img} />
+      <Card className="m-2 body-detail col-12" style={{ width: '21rem' }}>
+      <Image style={{width: '300px', height: '300px'}} src={img} roundedCircle className="mx-auto" />
         <Card.Body className="text-white">
           <Card.Title> {name}</Card.Title>
           <Card.Title>${price}</Card.Title>

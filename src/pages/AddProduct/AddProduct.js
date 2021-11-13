@@ -10,7 +10,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
   const onSubmit = data => {
       console.log(data);
-      axios.post('http://localhost:5000/caritem',data)
+      axios.post('https://peaceful-earth-75110.herokuapp.com/caritem',data)
       .then(res =>{
           if(res.data.insertedId){
               alert('added successfully')

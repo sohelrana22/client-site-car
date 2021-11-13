@@ -20,7 +20,6 @@ const Header = () => {
       <Nav className="ms-auto">
         <Nav.Link as={NavLink} className="text" to="/home">Home</Nav.Link>
         <Nav.Link as={NavLink} className="text" to="/caritem">Car-Item</Nav.Link>
-        <Nav.Link as={NavLink} className="text" to="/myorder">My Order</Nav.Link>
         <Nav.Link as={NavLink} className="text" to="/about">About</Nav.Link>
         <Nav.Link as={NavLink} className="text" to="/contact">Contact us</Nav.Link>
       {!user.email ?  (<>

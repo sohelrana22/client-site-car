@@ -13,7 +13,7 @@ const Details = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
       delete data._id;
-        fetch('http://localhost:5000/order', {
+        fetch('https://peaceful-earth-75110.herokuapp.com/order', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -30,7 +30,7 @@ const Details = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/caritem')
+        fetch('https://peaceful-earth-75110.herokuapp.com/caritem')
             .then(res => res.json())
             .then(data => {
                 const orders = data?.find(order => order?._id === id)

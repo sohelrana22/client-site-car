@@ -6,21 +6,22 @@ import './Footer.css'
 const Footer = () => {
     return (
         <div className="footer">
-            <div className="detail col-3">
+         <div className="row">
+         <div className="detail col-12 col-lg-3 mx-auto">
                 
-                <h2>Car House</h2>
-                <p>Inaugurated in 1993 “Car House Limited” has been a strong seller of both brand new and reconditioned vehicles. With the grace of Almighty Allah Car House can boast a strong sales and after sales service record in the heart of customers.</p>
+                <h2 className="mx-5">Car House</h2>
+                <p className="mx-5">Inaugurated in 1993 “Car House Limited” has been a strong seller of both brand new and reconditioned vehicles. With the grace of Almighty Allah Car House can boast a strong sales and after sales service record in the heart of customers.</p>
             </div>
-            <div className="detail col-3">
-                <h3>Office</h3>
-                <p>ITPL Road</p>
-                <p>Mirpur, Dhaka</p>
-                <p>Mirpur, Dhaka, Bangladesh</p>
-                <p className="email">sohel252646@gmail.com</p>
-                <h4>01796737590</h4>
+            <div className="detail col-12 col-lg-3 mx-auto">
+                <h3 className="mx-5">Office</h3>
+                <p className="mx-5">ITPL Road</p>
+                <p className="mx-5">Mirpur, Dhaka</p>
+                <p className="mx-5">Mirpur, Dhaka, Bangladesh</p>
+                <p  className="email mx-5">sohel252646@gmail.com</p>
+                <h4 className="mx-5">01796737590</h4>
             </div>
-            <div className="detail col-3">
-                <h3>Links</h3>
+            <div className="detail col-12 col-lg-3 mx-auto">
+                <h3 className="mx-5">Links</h3>
                 <ul>
                     <li><Nav.Link as={NavLink} className="text-footer" to="/home">Home</Nav.Link></li>
                     <li><Nav.Link as={NavLink} className="text-footer" to="/caritem">Car-Item</Nav.Link></li>
@@ -30,6 +31,7 @@ const Footer = () => {
                 </ul>
 
             </div>
+         </div>
             <hr />
             <p className="copyright">Copyright @ 2021 - All Rights Reserved</p>
         </div>

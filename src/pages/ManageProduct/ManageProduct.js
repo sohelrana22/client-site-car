@@ -10,14 +10,14 @@ const ManageProduct = () => {
     const [allProduct, setAllProduct] = useState([])
     console.log(name);
     useEffect(() => {
-        fetch('http://localhost:5000/caritem')
+        fetch('https://peaceful-earth-75110.herokuapp.com/caritem')
             .then(res => res.json())
             .then(data => setAllProduct(data));
     }, [name])
     const handleDelete = name => {
         const proceed = window.confirm('Are you sure, You want to cancel Order?');
         if(proceed) {
-          const url = `http://localhost:5000/caritem/${name}`;
+          const url = `https://peaceful-earth-75110.herokuapp.com/caritem/${name}`;
           fetch(url, {
               method: 'DELETE'
           })

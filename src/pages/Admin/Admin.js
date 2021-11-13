@@ -13,7 +13,7 @@ const Admin = () => {
     }
     const handleAdminSubmit = e => {
         const user = {email};
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://peaceful-earth-75110.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

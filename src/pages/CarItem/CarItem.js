@@ -23,7 +23,7 @@ const CarItem = () => {
           <Container>
               <div className="my-3 d-flex flex-wrap justify-content-between">
                   {
-                      car.map((car) => (<Car key={car.key}  car={car} />
+                      car.map((car) => (<Car key={car._id}  car={car} />
                         ))}
               </div>
           </Container>

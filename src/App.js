@@ -22,6 +22,7 @@ import ManageOrder from './pages/ManageOrder/ManageOrder';
 import AddProduct from './pages/AddProduct/AddProduct';
 import Admin from './pages/Admin/Admin';
 import ManageProduct from './pages/ManageProduct/ManageProduct';
+import AdminRoute from './route/AdminRoute';
 
 function App() {
   return (
@@ -45,24 +46,24 @@ function App() {
           <PrivateRoute path='/myorder'>
             <MyOrder></MyOrder>
           </PrivateRoute>
-          <PrivateRoute path='/addproduct'>
+          <AdminRoute path='/addproduct'>
             <AddProduct></AddProduct>
-          </PrivateRoute>
-          <PrivateRoute path='/manageproduct'>
+          </AdminRoute>
+          <AdminRoute path='/manageproduct'>
             <ManageProduct></ManageProduct>
-          </PrivateRoute>
-          <PrivateRoute path='/admin'>
+          </AdminRoute>
+          <AdminRoute path='/admin'>
             <Admin></Admin>
-          </PrivateRoute>
+          </AdminRoute>
           <Route path='/login'>
             <Login></Login>
           </Route>
           <Route path='/register'>
            <Register></Register>
           </Route>
-          <PrivateRoute path='/manageallorder'>
+          <AdminRoute path='/manageallorder'>
            <ManageOrder></ManageOrder>
-          </PrivateRoute>
+          </AdminRoute>
          <Route exact path='/caritem'>
             <CarItem></CarItem>
           </Route>

@@ -8,6 +8,7 @@ import sectionBg from './../../assets/images/bg.jpg';
 const Dashboard = () => {
     const { AllContexts } = useAuth()
     const {admin} = useFirebase()
+    console.log(admin)
     const { logOut } = AllContexts;
     return (
         <div
@@ -39,9 +40,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-
-
-
-
-// https://peaceful-earth-75110.herokuapp.com/

@@ -40,15 +40,20 @@ const history = useHistory();
 
     // admin data load
     useEffect(()=> {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        setIsLoading(true)
+        fetch(`https://peaceful-earth-75110.herokuapp.com/users/${user.email}`)
         .then(res => res.json())
-        .then(data => setAdmin(data.admin))
+        .then(data => {
+            setAdmin(data.admin)
+            setIsLoading(false)
+        } )
     }, [user.email])
    
 
     
     // Get the currently signed-in user
     useEffect(()=>{
+        setIsLoading(true)
       const unsubscribe =  onAuthStateChanged(auth, (signedInUser) => {
             if (signedInUser) {
                 setUser(signedInUser);
@@ -111,7 +116,7 @@ function setUserName(){
 
 const saveUser = (email, displayName, method) => {
     const user = {email, displayName};
-    fetch('http://localhost:5000/users', {
+    fetch('https://peaceful-earth-75110.herokuapp.com/users', {
         method: 'POST',
         headers:{
             'content-type': 'application/json'

@@ -11,14 +11,14 @@ const MyOrder = () => {
     const [order, setOrder] = useState([])
     console.log(email);
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${email}`)
+        fetch(`https://peaceful-earth-75110.herokuapp.com/orders/${email}`)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, [email])
     const handleDelete = email => {
       const proceed = window.confirm('Are you sure, You want to cancel Order?');
       if(proceed) {
-        const url = `http://localhost:5000/orders/${email}`;
+        const url = `https://peaceful-earth-75110.herokuapp.com/orders/${email}`;
         fetch(url, {
             method: 'DELETE'
         })
